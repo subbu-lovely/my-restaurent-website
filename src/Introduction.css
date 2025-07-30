@@ -1,0 +1,113 @@
+/* Container */
+.intro-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  border-radius: 20px;
+  margin: 20px;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: linear-gradient(270deg, #f9c5d1, #fddde6, #fff7f0);
+  background-size: 600% 600%;
+  animation: backgroundMove 15s ease infinite;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.intro-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.intro-title {
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  min-height: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #222;
+}
+
+.intro-image {
+  flex: 1;
+  width: 320px;
+  max-width: 100%;
+  height: 500px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+
+
+/* Hover zoom effect */
+.intro-image:hover {
+  transform: scale(1.03);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .intro-container {
+    background: linear-gradient(270deg, #1e1e1e, #2a2a2a, #111);
+  }
+
+  .intro-text {
+    color: #ddd;
+  }
+}
+
+
+/* Responsive for mobile screens */
+@media (max-width: 768px) {
+  .intro-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  gap: 40px;
+  flex-wrap: wrap; /* stacks on small screens */
+ }
+  .intro-title {
+    white-space: normal;
+  }
+
+  .intro-content,
+  .intro-image {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@keyframes backgroundMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
