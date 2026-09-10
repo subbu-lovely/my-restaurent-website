@@ -6,7 +6,8 @@ import VegCurries from './VegCurries';
 import NonVegCurries from './NonVegCurries';
 import Juices from './Juices';
 import Rates from './Rates';
-import OrderForm from './OrderForm';
+import OrderList from './OrderList';
+import AdminLogin from './AdminLogin';
 import Footer from './Footer';
 import './App.css'
 
@@ -22,7 +23,8 @@ function App() {
         <Route path="/non-veg-curries" element={<NonVegCurries />} />
         <Route path="/juices" element={<Juices />} />
         <Route path="/rates" element={<Rates />} />
-        <Route path="/order" element={<OrderForm />} /> {/* ✅ Added route here */} 
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/orderlist" element={<OrderList />} /> 
       </Routes>
       <Footer /> {/* 👈 Add footer here */}
     </div>

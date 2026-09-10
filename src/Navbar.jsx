@@ -24,7 +24,9 @@ function Navbar() {
         <li><Link to="/non-veg-curries" onClick={toggleMenu}>Non-Veg Curries</Link></li>
         <li><Link to="/juices" onClick={toggleMenu}>Juices</Link></li>
         <li><Link to="/rates" onClick={toggleMenu}>Rates</Link></li>
-        <li><Link to="/order" className="order-btn" onClick={toggleMenu}>Order Now</Link></li>
+        <Link to="/admin-login" className="order-btn" onClick={toggleMenu}>
+          Order list
+        </Link>
       </ul>
     </nav>
   );

@@ -159,3 +159,294 @@
   background-color: #f57c00;
 }
 
+/* ============================= */
+/* ORDER FORM POPUP */
+/* ============================= */
+
+.order-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+
+  padding: 20px;
+}
+
+.order-popup {
+  width: 100%;
+  max-width: 430px;
+
+  background: white;
+  border-radius: 15px;
+
+  padding: 25px;
+
+  position: relative;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+
+  animation: popupOpen 0.25s ease;
+}
+
+@keyframes popupOpen {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.order-popup h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.close-order {
+  position: absolute;
+
+  top: 12px;
+  right: 15px;
+
+  border: none;
+  background: transparent;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+
+/* SELECTED FOOD */
+
+.selected-food {
+  background: #fff7e6;
+
+  border-radius: 10px;
+
+  padding: 15px;
+
+  margin-bottom: 20px;
+
+  text-align: center;
+}
+
+.selected-food p {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: #777;
+}
+
+.selected-food h3 {
+  margin: 6px 0;
+
+  font-size: 20px;
+}
+
+.selected-food span {
+  font-weight: bold;
+
+  color: #e67e22;
+}
+
+
+/* FORM */
+
+.order-popup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-popup label {
+  font-weight: 600;
+
+  margin-bottom: 6px;
+
+  color: #333;
+}
+
+.order-popup input {
+  width: 100%;
+
+  padding: 12px;
+
+  margin-bottom: 15px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 7px;
+
+  font-size: 16px;
+
+  box-sizing: border-box;
+}
+
+.order-popup input:focus {
+  outline: none;
+
+  border-color: #27ae60;
+}
+
+
+/* CONFIRM ORDER BUTTON */
+
+.confirm-order-btn {
+  width: 100%;
+
+  padding: 13px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #27ae60;
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  margin-top: 5px;
+}
+
+.confirm-order-btn:hover {
+  background: #219150;
+}
+
+
+/* ============================= */
+/* SUCCESS POPUP */
+/* ============================= */
+
+.success-overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 10000;
+
+  padding: 20px;
+}
+
+.success-popup {
+  width: 100%;
+  max-width: 400px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+
+  animation: popupOpen 0.25s ease;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 15px;
+
+  border-radius: 50%;
+
+  background: #27ae60;
+
+  color: white;
+
+  font-size: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.success-popup h2 {
+  margin-bottom: 10px;
+
+  color: #27ae60;
+}
+
+.success-popup p {
+  color: #666;
+
+  margin-bottom: 20px;
+}
+
+.success-btn {
+  padding: 10px 30px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #27ae60;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.success-btn:hover {
+  background: #219150;
+}
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 480px) {
+
+  .order-popup {
+    padding: 20px;
+
+    max-width: 100%;
+  }
+
+  .order-popup h2 {
+    font-size: 21px;
+  }
+
+  .success-popup {
+    padding: 25px;
+  }
+
+}

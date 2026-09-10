@@ -1,110 +1,154 @@
-/* Reset */
-ul {
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 25px;
+  box-sizing: border-box;
+}
+
+/* Restaurant name */
+
+.navbar-brand {
+  color: #ffd700;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* Desktop menu */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Main navbar */
-.navbar {
-  background-color: #222;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between; /* Left + Right layout */
-  align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.navbar-brand {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #ffcc00;
-  animation: glowText 2s ease-in-out infinite alternate;
-}
-
-/* Navbar links (right side) */
-.navbar-links {
-  display: flex;
-  gap: 30px;
+.navbar-links li {
+  list-style: none;
 }
 
 .navbar-links a {
-  color: #fff;
+  color: white;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 8px 10px;
+  display: block;
 }
 
 .navbar-links a:hover {
-  color: #ffcc00;
+  color: #ffd700;
 }
 
-/* Glow animation */
-@keyframes glowText {
-  0% {
-    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
-  }
-  100% {
-    text-shadow: 0 0 10px #ffaa00, 0 0 20px #ffaa00;
-  }
-}
-
-
+/* Order button */
 
 .order-btn {
-  background-color: white;
-  color: #e52e71;
-  font-weight: bold;
-  border-radius: 25px;
-  transition: all 0.3s ease-in-out;
+  background: #ff9800;
+  color: white !important;
+  border-radius: 6px;
+  padding: 9px 14px !important;
 }
 
 .order-btn:hover {
-  background-color: #fff0f5;
-  transform: scale(1.1);
-  color: #ff4081;
+  background: #f57c00;
 }
 
-/* Hamburger styles */
+/* Hamburger */
+
 .hamburger {
   display: none;
-  flex-direction: column;
   cursor: pointer;
-  gap: 5px;
+  width: 35px;
 }
 
 .bar {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  transition: all 0.3s ease;
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 5px 0;
+  background: white;
+  border-radius: 3px;
+  transition: 0.3s;
 }
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
+
+  .navbar {
+    padding: 14px 20px;
   }
+
+  .navbar-brand {
+    font-size: 24px;
+  }
+
+  /* Show hamburger */
+
+  .hamburger {
+    display: block;
+    z-index: 1100;
+  }
+
+  /* Mobile menu */
 
   .navbar-links {
     position: absolute;
-    top: 70px;
-    right: 0;
-    background-color: #ff8a00;
+    top: 100%;
+    left: 0;
     width: 100%;
-    height: auto;
+
+    background: #222;
+
+    display: none;
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 0;
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s ease;
+    align-items: stretch;
+
+    padding: 10px 0 15px;
+
+    margin: 0;
+
+    z-index: 1050;
+
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
   }
 
+  /* When hamburger is clicked */
+
   .navbar-links.active {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
+    display: flex;
+  }
+
+  .navbar-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-links a {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 10px;
+    font-size: 18px;
+  }
+
+  /* Order button mobile */
+
+  .navbar-links .order-btn {
+    width: calc(100% - 30px);
+    margin: 5px auto;
+    text-align: center;
   }
 }
